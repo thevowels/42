@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 09:37:46 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/17 19:14:42 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/17 17:55:36 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/17 19:14:35 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+int	ft_recursive_power(int nb, int power)
 {
-	if (nb < 0)
+	if (power < 0)
 		return (0);
 	else if (nb == 0)
+		return (0);
+	else if (power == 0)
 		return (1);
-	if (nb == 1)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	return (nb * ft_recursive_power(nb, power - 1));
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	int	i;
-
-	i = 7;
-	printf("Factorial of %i is %i", 42, ft_iterative_factorial(i));
+	printf("Factorial of %i is %i", 5, ft_recursive_power(2,5));
 }
 */

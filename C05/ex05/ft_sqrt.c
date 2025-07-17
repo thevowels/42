@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 09:37:46 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/17 19:14:42 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/17 21:12:21 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/17 21:20:17 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+int	ft_square(int n)
 {
-	if (nb < 0)
-		return (0);
-	else if (nb == 0)
-		return (1);
-	if (nb == 1)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	return (n * n);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+int	ft_sqrt(int nb)
 {
 	int	i;
 
-	i = 7;
-	printf("Factorial of %i is %i", 42, ft_iterative_factorial(i));
+	i = 1;
+	while (ft_square(i) <= nb)
+	{
+		if (ft_square(i) == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }
-*/

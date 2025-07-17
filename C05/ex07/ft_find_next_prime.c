@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 09:37:46 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/17 19:14:42 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/17 21:28:43 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/17 21:32:26 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+int	isPrime(int n, int c)
 {
-	if (nb < 0)
-		return (0);
-	else if (nb == 0)
+	if (c == 1)
+	{
 		return (1);
-	if (nb == 1)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	}
+	else
+	{
+		if (n % c == 0)
+			return (0);
+		return (isPrime(n, c - 1));
+	}
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+
+int ft_find_next_prime(int nb)
 {
-	int	i;
-
-	i = 7;
-	printf("Factorial of %i is %i", 42, ft_iterative_factorial(i));
+	if(nb <= 2)
+		return (2);
+	nb += 1;
+	while(!isPrime(nb, nb/2))
+	{
+		nb++;
+	}
+	return (nb);
 }
-*/
