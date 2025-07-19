@@ -6,12 +6,11 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 16:24:08 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/19 19:03:33 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/19 19:13:44 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int compare(char *str1, char * str2)
 {

@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:55:36 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/17 19:14:38 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/19 23:07:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_iterative_power(int nb, int power)
 	result = 1;
 	if (power < 0)
 		return (0);
+	else if (nb == 0 && power == 0)
+		return (1);
 	else if (nb == 0)
 		return (0);
 	else if (power == 0)
