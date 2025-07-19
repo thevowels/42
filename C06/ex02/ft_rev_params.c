@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 21:28:43 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/17 22:03:34 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/18 16:17:39 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/18 16:22:06 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int n, int c)
+#include <unistd.h>
+
+int	wordcount(char *str)
 {
-	if (c == 1)
-	{
-		return (1);
-	}
-	else
-	{
-		if (n % c == 0)
-			return (0);
-		return (ft_is_prime(n, c - 1));
-	}
+	int	wc;
+
+	wc = 0;
+	while (str[wc])
+		wc++;
+	return (wc);
 }
 
-int	ft_find_next_prime(int nb)
+int	main(int argc, char **argv)
 {
-	if (nb <= 2)
-		return (2);
-	nb += 1;
-	while (!ft_is_prime(nb, nb / 2))
+	int	wc;
+	int	i;
+
+	i = argc - 1;
+	if (i > 0)
 	{
-		nb++;
+		while (i > 0)
+		{
+			wc = wordcount(argv[i]);
+			write(1, argv[i], wc);
+			write(1, "\n", 1);
+			i--;
+		}
 	}
-	return (nb);
+	return (0);
 }
