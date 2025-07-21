@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 21:19:45 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/21 17:44:38 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/22 01:04:48 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,29 @@ multiple of n then their common divisior is n.
 
 */
 
-int	is_prime(int n, int c)
-{
-	if (c == 2)
-	{
-		if (n % c == 0)
-			return (0);
-		else
-			c += 1;
-	}
-	if (c > n / 2)
-		return (1);
-	else if (n % c == 0)
-		return (0);
-	else
-		return (is_prime(n, c + 2));
-}
-
 int	ft_is_prime(int nb)
 {
+	int	i;
+
+	i = 3;
 	if (nb < 2)
 		return (0);
 	if (nb == 2)
 		return (1);
-	return (is_prime(nb, 2));
+	if (nb % 2 == 0)
+		return (0);
+	while (i < nb / 2)
+	{
+		if (nb % i == 0)
+			return (0);
+		i += 2;
+	}
+	return (1);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("Digit is prime: %i.\n", ft_is_prime(17981));
+}*/

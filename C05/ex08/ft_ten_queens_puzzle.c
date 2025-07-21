@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:42:13 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/21 21:37:25 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/22 01:11:42 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	solve_ten_queen(int *count, int *board, int col)
 	i = 0;
 	while (i < 10)
 	{
-		// printf("Placing queen on row %i of col %i .\n", i, col);
 		board[col] = i;
 		if (is_safe(board, col))
 		{
@@ -70,10 +69,8 @@ void	solve_ten_queen(int *count, int *board, int col)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
 
-int	ft_ten_queen_puzzle(void)
+int	ft_ten_queens_puzzle(void)
 {
 	int	count;
 	int	board[10];
@@ -81,4 +78,16 @@ int	ft_ten_queen_puzzle(void)
 	count = 0;
 	solve_ten_queen(&count, board, 0);
 	return (count);
-}*/
+}
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int	count;
+
+	count = ft_ten_queens_puzzle();
+	printf("Total number of solution found is %i", count);
+}
+*/
