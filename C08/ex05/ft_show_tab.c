@@ -6,16 +6,16 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 04:20:05 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/23 05:04:26 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/23 13:52:44 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-// #include <stdlib.h>
-// #include "ft_stock_str.h"
+#include <stdlib.h>
+#include "ft_stock_str.h"
 
-// struct s_stock_str *ft_strs_to_tab(int ac, char **av);
+struct s_stock_str *ft_strs_to_tab(int ac, char **av);
 
 void	ft_putstr(char *str)
 {
@@ -50,18 +50,18 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par[i].str)
 	{
 		ft_putstr(par[i].str);
-		ft_putstr(par[i].copy);
 		ft_putint(par[i].size);
+		ft_putstr(par[i].copy);
 		i++;
 	}
 }
 
-/*
+
 #include <stdio.h>
 
 int	main(void)
 {
-	char				*strs[] = {"hello", "world", "this", "is", "a", "test"};
+	char				*strs[] = {"abcdefghijkl", "world", "this", "is", "a", "test"};
 	int					size;
 	struct s_stock_str	*result;
 
@@ -76,4 +76,3 @@ int	main(void)
 	free(result);
 	return (0);
 }
-*/

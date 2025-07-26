@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aphyo-ht <aphyo-ht@student.42bangkok.      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/07/26 06:52:22 by aphyo-ht          #+#    #+#              #
+#    Updated: 2025/07/26 06:52:41 by aphyo-ht         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = my_prog
+
+MY_SOURCES = srcs/ft_putchar.c \
+	     srcs/ft_putstr.c \
+	     srcs/main.c
+
+RM = rm -f
+
+OBJS = ${MY_SOURCES:.c=.o}
+
+MY_OBJECTS = $(MY_SOURCES:.c=.o)
+
+CFLAGS += -Wall -Werror -Wextra
+
+$(NAME): $(MY_OBJECTS)
+	cc -o $(NAME) $(MY_OBJECTS)
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+clean: 
+	${RM} ${OBJS}
+
+fclean: clean
+	${RM} ${NAME}
+
+re: fclean all

@@ -1,0 +1,12 @@
+
+fd: file descriptor of the file from which data is to be reads
+buf: buffer to read data from.
+cnt: length of the buffer.
+Return Value
+
+Return number of bytes read on success.
+Return 0 on reaching the end of file.
+Return -1 on error.
+Return -1 on signal interrupt.
+buf needs to point to a valid memory location with a length not smaller than the specified size because of overflow. fd should be a valid file descriptor returned from open() to perform the read operation because if fd is NULL then the read should generate an error. cnt is the requested number of bytes read, while the return value is the actual number of bytes read. Also, sometimes read system call should read fewer bytes than cnt.
+*

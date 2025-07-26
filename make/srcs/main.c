@@ -5,38 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42bangkok.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 09:11:33 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/23 09:33:29 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/26 06:39:13 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/26 06:44:25 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int ft_putchar(char c);
+int ft_putstr(char *str);
 
 int main(void)
 {
-	int i;
-	int j;
-	char str[20] = "my string";
-	
-	i = 4;
-	j = 2;
-	ft_putchar('A');
+	ft_putchar('C');
 	ft_putchar('\n');
-	ft_putstr(str);	
-	ft_putchar('\n');
-	
-	ft_swap(&i,&j);
-	ft_putchar('0' + i);
-	ft_putchar('\n');
-
-	i =  ft_strlen(str);
-	ft_putchar('0'+i);
-	ft_putchar('\n');
-	
-	i = ft_strcmp("ABC","AB");
-	ft_putchar('0' + (i % 10));
-	ft_putchar('\n');
-
-
-
+	ft_putstr("1337 42");
 }

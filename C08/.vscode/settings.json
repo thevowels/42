@@ -5,6 +5,7 @@
 		"strings.h": "c",
 		"ft_boolean.h": "c",
 		"features.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"ft_stock_str.h": "c"
 	}
 }

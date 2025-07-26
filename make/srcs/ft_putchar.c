@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42bangkok.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 09:11:33 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/23 09:33:29 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/07/09 17:11:25 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/07/09 23:52:06 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int main(void)
+void	ft_putchar(char c);
+
+void	ft_putchar(char c)
 {
-	int i;
-	int j;
-	char str[20] = "my string";
-	
-	i = 4;
-	j = 2;
-	ft_putchar('A');
-	ft_putchar('\n');
-	ft_putstr(str);	
-	ft_putchar('\n');
-	
-	ft_swap(&i,&j);
-	ft_putchar('0' + i);
-	ft_putchar('\n');
-
-	i =  ft_strlen(str);
-	ft_putchar('0'+i);
-	ft_putchar('\n');
-	
-	i = ft_strcmp("ABC","AB");
-	ft_putchar('0' + (i % 10));
-	ft_putchar('\n');
-
-
-
+	write(1, &c, 1);
 }
+
+/*
+int	main(void)
+{
+	ft_putchar('t');
+	return (0);
+}
+*/

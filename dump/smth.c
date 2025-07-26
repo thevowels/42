@@ -3,12 +3,11 @@
 
 int	main(int argc, char **argv)
 {
-	argv++;
-
-	while(argv)
+	argc--;
+	while(argc >=1)
 	{
-		printf("%s\n", *argv);
-		argv++;
+		printf("%s\n", argv[argc]);
+		argc--;
 	}
 
 	return (argc);

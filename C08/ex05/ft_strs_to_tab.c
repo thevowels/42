@@ -6,12 +6,12 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 20:34:20 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/07/23 13:44:49 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/07/23 13:57:03 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
+#include <unistd.h>
 #include "ft_stock_str.h"
 
 int	get_length(char *str)
@@ -20,7 +20,12 @@ int	get_length(char *str)
 
 	i = 0;
 	while (str[i])
+	{
+		write(1,&str[i],1);
 		i++;
+
+	}
+	write(1,"\n",1);
 	return (i);
 }
 
@@ -34,8 +39,6 @@ void	ft_strcpy(char *dest, char *str)
 		*(dest + i) = *(str + i);
 		i++;
 	}
-	*(dest+i)='\0';
-	return (dest);
 }
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
@@ -60,7 +63,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	ptr[i].str = 0;
 	return (ptr);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -92,3 +95,4 @@ int	main(void)
 	free(result);
 	return (0);
 }
+*/
